@@ -12,13 +12,4 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @RequiredArgsConstructor
 public class UserConfig {
 
-    private final PasswordEncoder passwordEncoder;
-
-    @Bean
-    CommandLineRunner commandLineRunner(UserRepository userRepository) {
-        return args -> {
-            User user = new User("user@email.com",passwordEncoder.encode("password"));
-            userRepository.save(user);
-        };
-    }
 }
